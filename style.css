@@ -1,0 +1,35 @@
+h1{
+    padding-bottom: 15px;
+    font-family:'Archivo Black', sans-serif;
+    text-transform: uppercase; 
+    font-size: 30px;
+}
+p,.font, input, h6 {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.brandname {
+    font-family:'Archivo Black', sans-serif;
+    text-transform: uppercase; 
+    font-size: 40px;
+    text-align: center;
+}
+
+h4,h2{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+h4{
+    color:white;
+    background-color:black;
+}
+.border {
+    border: 2px solid #cccccc;
+}
+
+.centertext {
+    text-align: center;
+}
+.btn-block {
+font-weight:bolder !important;
+}
