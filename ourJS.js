@@ -1,23 +1,30 @@
 // calculations.js
-let p1 = document.getElementById("p1");
-let p2 = document.getElementById("p2");
-let p3 = document.getElementById("p3");
-let p4 = document.getElementById("p4");
-let products = [p1, p2, p3, p4];
+var p1 = document.getElementById("p1");
+var p2 = document.getElementById("p2");
+var p3 = document.getElementById("p3");
+var p4 = document.getElementById("p4");
+var products = [p1, p2, p3, p4];
+
+function displayProducts() {
+    for(var i = 0; i < products.length; i++) {
+        var x = products[i].innerText;
+
+    }
+    document.getElementById("orderSummary").innerHTML = "hi" + x.toString();
+}
 
 function calcPrice() {
-
-    let priceOfProduct = 0;
-    let unitPrice = 0;
-    let numUnits = 0;
-    let totalPrice = 0;
-    for(let i = 0; i < products.length; i++) {
+    var priceOfProduct = 0;
+    var unitPrice = 0;
+    var numUnits = 0;
+    var totalPrice = 0;
+    for(var i = 0; i < products.length; i++) {
         if(products[i].selected === true) {
             priceOfProduct = parseInt(products[i].value);
             numUnits = document.getElementById("units").value;
 
             unitPrice += priceOfProduct;
-            totalPrice += (priceOfProduct * parseInt(numUnits))
+            totalPrice += (priceOfProduct * parseInt(numUnits));
         }
 
     }
@@ -32,16 +39,16 @@ function checkoutPrice() {
     const TAX_AMOUNT = .08;
     const SHIPPING_FEE = .03;
 
-    let shoppingAmt = Math.floor((Math.random() * 50) + 5); // test for now
+    var shoppingAmt = Math.floor((Math.random() * 50) + 5); // test for now
 
-    let tax = shoppingAmt * TAX_AMOUNT;
-    let fixedTax = tax.toFixed(2);
+    var tax = shoppingAmt * TAX_AMOUNT;
+    var fixedTax = tax.toFixed(2);
 
-    let shippingCharges = shoppingAmt * SHIPPING_FEE;
-    let fixedShipping = shippingCharges.toFixed(2);
+    var shippingCharges = shoppingAmt * SHIPPING_FEE;
+    var fixedShipping = shippingCharges.toFixed(2);
 
-    let grandTotal = shoppingAmt + tax + shippingCharges;
-    let fixedGrandTotal = grandTotal.toFixed(2);
+    var grandTotal = shoppingAmt + tax + shippingCharges;
+    var fixedGrandTotal = grandTotal.toFixed(2);
 
     document.getElementById("shoppingAmt").innerHTML = "$" + shoppingAmt;
     document.getElementById("taxAmt").innerHTML = "$" + fixedTax;
