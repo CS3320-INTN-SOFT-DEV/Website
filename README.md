@@ -10,3 +10,8 @@
 # Quentin: Content
 # Victor: Header/Footer
 ########################################
+#              Assignment 3
+# Sierra: Confirmation Page & Validate Format MM/YYYY
+# Quentin: Max/Min Characters
+# Victor: Calculations
+########################################
