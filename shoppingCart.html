@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="victorstyle.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <title>Shopping Cart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="ourJS.js"></script>
+
+    <title>Shopping Cart</title>
 </head>
 <body>
     <header>
@@ -17,41 +19,53 @@
 
     <ul>
         <li><a class="active" href="#log">Login</a></li>
-        <li><a href="#user">User Info</a></li>
-        <li><a href="#cart">Shopping Cart</a></li>
-        <li><a href="#cart">Shipping Info</a></li>
-        <li><a href="#cart">Checkout</a></li>
+        <li><a href="UserInfo.html">User Info</a></li>
+        <li><a href="shoppingCart.html">Shopping Cart</a></li>
+        <li><a href="shippingInfo.html">Shipping Info</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
     </ul>
 
     <div class="container">
         <h4>Shopping Cart</h4>
         Product<br>
-        <select class="dropdown" name="products">
-            <option value="Product 1">Product 1 (Unit Price 1)</option>
-            <option value="Product 2">Product 2 (Unit Price 2)</option>
-            <option value="Product 3">Product 3 (Unit Price 3)</option>
-            <option value="Product 4">Product 4 (Unit Price 4)</option>
+        <select class="dropdown" name="products" multiple>
+            <option id="p1" value="5">Product 1 ($5)</option>
+            <option id="p2" value="10">Product 2 ($10)</option>
+            <option id="p3" value="15">Product 3 ($15)</option>
+            <option id="p4" value="20">Product 4 ($20)</option>
         </select><br><br>
+
+        <!--div class="put_table">
+            <input type="button" value="Add Table" onclick="createTable()"><br>
+        </div-->
 
 
         <div class="row">
             <div class="col-50">
-                Units<br>
-                <input type="text" name="units" placeholder="4"><br><br>
+
+                Units <br>
+                <input type="text" id="units" placeholder="3"><br><br>
             </div>
         </div>
 
+        <div class="add_product">
+            <input type="button" value="Add Product(s)" class="btn" onclick="calcPrice()"><br>
+        </div>
+
         <span class="price" style="color: black">
-        <p>Unit Price: <b>$X</b></p>
-        <hr>
-        <p>Total Price: <b>$Y</b></p><br><br>
+            <p id="unit_price">Unit Price: $</p>
+            <hr>
+            <p id="total_price">Total Price: $</p>
+            <br><br>
         </span>
 
-        <input type="submit" value="Continue to Shipping" class="btn"><br><br>
+        <input type="button" name="gotoShippingBtn" value="Continue to Shipping"
+               class="btn" onclick="gotoShipping()"><br><br>
     </div>
 
     <footer>
         <p>© Copyright 2019 Company Name</p>
     </footer>
+
 </body>
 </html>

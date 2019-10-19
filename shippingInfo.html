@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="victorstyle.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <title>Shipping Information</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="ourJS.js"></script>
+
+    <title>Shipping Information</title>
 </head>
 <body>
     <header>
@@ -17,10 +19,10 @@
 
     <ul>
         <li><a class="active" href="#log">Login</a></li>
-        <li><a href="#user">User Info</a></li>
-        <li><a href="#cart">Shopping Cart</a></li>
-        <li><a href="#cart">Shipping Info</a></li>
-        <li><a href="#cart">Checkout</a></li>
+        <li><a href="UserInfo.html">User Info</a></li>
+        <li><a href="shoppingCart.html">Shopping Cart</a></li>
+        <li><a href="shippingInfo.html">Shipping Info</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
     </ul>
 
     <div class="container">
@@ -88,12 +90,14 @@
             </select><br><br>
             Zip Code<br>
             <input type="text" name="zipcode" placeholder="78666"><br><br>
-            <input type="submit" value="Continue to Checkout" class="btn"><br><br>
+            <input type="button" name="gotoCheckoutBtn" value="Continue to Checkout"
+                   class="btn" onclick="gotoCheckout()"><br><br>
         </form>
     </div>
 
     <footer>
         <p>© Copyright 2019 Company Name</p>
     </footer>
+
 </body>
 </html>
