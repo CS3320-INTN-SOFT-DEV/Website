@@ -18,16 +18,30 @@ function calcPrice() {
     var unitPrice = 0;
     var numUnits = 0;
     var totalPrice = 0;
+
+    numUnits = document.getElementById("units").value;
+
+    var productsNotSelected = 0;
     for(var i = 0; i < products.length; i++) {
         if(products[i].selected === true) {
             priceOfProduct = parseInt(products[i].value);
-            numUnits = document.getElementById("units").value;
 
             unitPrice += priceOfProduct;
             totalPrice += (priceOfProduct * parseInt(numUnits));
         }
-
+        else
+            productsNotSelected++;
     }
+    if(productsNotSelected === 4) {
+        alert("Please select at least one product.");
+        return false;
+    }
+
+    if(numUnits === "") {
+        alert("Please enter a number of units.");
+        return false;
+    }
+
     document.getElementById("unit_price").innerHTML =
         "Unit Price: $" + unitPrice;
 
@@ -57,11 +71,51 @@ function checkoutPrice() {
 }
 
 function gotoCheckout() {
-    location.href = "checkout.html";
+    var address = document.getElementById("address1").value;
+    var city = document.getElementById("city").value;
+    var stateList = document.getElementById("states");
+    var states = stateList.options[stateList.selectedIndex].value;
+    var zip = document.getElementById("zipcode").value;
+
+    if(address === "") {
+        alert("Please enter an address.");
+        return false;
+    }
+    else if(city === "") {
+        alert("Please enter a city.");
+        return false;
+    }
+    else if(states === "None") {
+        alert("Please enter a state.");
+        return false;
+    }
+    else if(zip === "") {
+        alert("Please enter a zip code");
+        return false;
+    }
+    else
+        location.href = "checkout.html";
 }
 
 function gotoShipping() {
-    location.href = "shippingInfo.html";
+    var productsNotSelected = 0;
+    for(var i = 0; i < products.length; i++)
+        if(products[i].selected !== true)
+            productsNotSelected++;
+
+    if(productsNotSelected === 4) {
+        alert("Please select at least one product.");
+        return false;
+    }
+
+    var units = document.getElementById("units").value;
+
+    if(units === "") {
+        alert("Please enter a number of units.");
+        return false;
+    }
+    else
+        location.href = "shippingInfo.html";
 }
 
 // CartJava.js

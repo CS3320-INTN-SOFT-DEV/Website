@@ -30,13 +30,14 @@
         <form action="/action_page.php">
             <input type="checkbox"> Use Physical Address<br><br>
             Address 1<br>
-            <input type="text" name="addressone" placeholder="1234 MyStreet Ave."><br><br>
+            <input type="text" id="address1"><br><br>
             Address 2<br>
-            <input type="text" name="addresstwo"><br><br>
+            <input type="text" id="address2"><br><br>
             City<br>
-            <input type="text" name="city" placeholder="San Marcos"><br><br>
+            <input type="text" id="city"><br><br>
             State<br>
-            <select class="dropdown" name="states">
+            <select class="dropdown" id="states">
+                <option value="None">-- Select --</option>
                 <option value="Alabama">AL</option>
                 <option value="Alaska">AK</option>
                 <option value="Arizona">AZ</option>
@@ -89,7 +90,7 @@
                 <option value="Wyoming">WY</option>
             </select><br><br>
             Zip Code<br>
-            <input type="text" name="zipcode" placeholder="78666"><br><br>
+            <input type="text" id="zipcode"><br><br>
             <input type="button" name="gotoCheckoutBtn" value="Continue to Checkout"
                    class="btn" onclick="gotoCheckout()"><br><br>
         </form>
