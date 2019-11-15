@@ -54,6 +54,7 @@ function checkoutPrice() {
     const SHIPPING_FEE = .03;
 
     var shoppingAmt = Math.floor((Math.random() * 50) + 5); // test for now
+    var fixedAmt = shoppingAmt.toFixed(2);
 
     var tax = shoppingAmt * TAX_AMOUNT;
     var fixedTax = tax.toFixed(2);
@@ -64,18 +65,18 @@ function checkoutPrice() {
     var grandTotal = shoppingAmt + tax + shippingCharges;
     var fixedGrandTotal = grandTotal.toFixed(2);
 
-    document.getElementById("shoppingAmt").innerHTML = "$" + shoppingAmt;
+    document.getElementById("shoppingAmt").innerHTML = "$" + fixedAmt;
     document.getElementById("taxAmt").innerHTML = "$" + fixedTax;
     document.getElementById("shippingCharge").innerHTML = "$" + fixedShipping;
     document.getElementById("totalAmt").innerHTML = "$" + fixedGrandTotal;
 }
 
 function gotoCheckout() {
-    var address = document.getElementById("address1").value;
-    var city = document.getElementById("city").value;
-    var stateList = document.getElementById("states");
+    var address = document.getElementsByName("address1").value;
+    var city = document.getElementsByName("city").value;
+    var stateList = document.getElementsByName("states");
     var states = stateList.options[stateList.selectedIndex].value;
-    var zip = document.getElementById("zipcode").value;
+    var zip = document.getElementsByName("zipcode").value;
 
     if(address === "") {
         alert("Please enter an address.");
@@ -121,51 +122,69 @@ function gotoShipping() {
 // CartJava.js
 function validatePersonalInfo()
 {
+    var _first = document.getElementsByName("fname").value;
+    var _street = document.getElementsByName("street").value;
+    var _street2 = document.getElementsByName("street2").value;
+    var _city = document.getElementsByName("city").value;
+    var _zip = document.getElementsByName("zip").value;
+    var _phone = document.getElementsByName("phone").value;
+    var _email = document.getElementsByName("email").value;
 
-    var _first = document.info.fname.value;
-    var _street = document.info.street.value;
-    var _street2 = document.info.street2.value;
-    var _city = document.info.city.value;
-    var _zip = document.info.zip.value;
-    var _phone = document.info.phone.value;
-    var _email = document.info.email.value;
 
-    if(_first.toString() == ""){console.log("Please enter a full name.");}
-    if(_street.toString() == ""){console.log("Please enter your street name.");}
-    if(_city.toString() == ""){console.log("Please enter your city.");}
-    if(_zip.toString() == ""){console.log("Please enter your zip.");}
-    if(_phone.toString() == ""){console.log("Please enter your phone number.");}
-    if(_email.toString() == ""){console.log("Please enter your email.");}
-    stringlength(_first.toString(),0,100);
-    stringlength(_street.toString(),0,100);
-    stringlength(_zip.toString(),0,100);
-    stringlength(_phone.toString(),0,100);
-    stringlength(_email.toString(),0,100);
-
+    stringlength(_first,0,100);
+    stringlength(_street,0,100);
+    stringlength(_zip,0,100);
+    stringlength(_phone,0,100);
+    stringlength(_email,0,100);
 
     var checkZip = checkNum(5);
-    var phoneInput = document.info.phone.value;
+    //var phoneInput = document.getElementById("phone").value;
     var validPhone = false;
     var validZip = false;
-    if(checkZip == true){
+
+    if(checkZip === true)
         validZip = true;
-    }
-    else{
-        console.log("Invalid Zip Code" + validZip);
-    }
-    if(!checkPhone(phoneInput)){
-        console.log("Phone number is invalid." + validPhone);
-    }
-    else{
+    else
+        alert("Invalid Zip Code. " + validZip);
+
+    if(!checkPhone(_phone))
+        alert("Phone number is invalid. " + validPhone);
+    else
         validPhone = true;
+
+    if(validZip && validPhone)
+        alert("Your form has been verified");
+
+
+    if(_first === "") {
+        alert("Please enter a full name.");
+        return false;
     }
-    if(validZip && validPhone){
-        console.log("Your form has been verified");
+    else if(_street === "") {
+        alert("Please enter your street name.");
+        return false;
     }
+    else if(_city === "") {
+        alert("Please enter your city.");
+        return false;
+    }
+    else if(_zip === "") {
+        alert("Please enter your zip.");
+        return false;
+    }
+    else if(_phone === "") {
+        alert("Please enter your phone number.");
+        return false;
+    }
+    else if(_email === "") {
+        alert("Please enter your email.");
+        return false;
+    }
+    else
+        location.href = "shoppingCart.html";
 }
 
-function checkPhone(str)
-{
+function checkPhone(str) {
     var regexp = /^(\d{10}|\d{3}-\d{3}-\d{4}|\(\d{3}\)\d{3}-\d{4})$/;
     return regexp.test(str);
 }
@@ -174,7 +193,7 @@ function checkPhone(str)
 function checkDate(str) {
     var re = /^(\d{1,2}\/\d{4})$/;
 
-    if (form.startdate.value != '' && !form.expdate.value.match(re)) {
+    if (form.startdate.value !== '' && !form.expdate.value.match(re)) {
         alert("Invalid date format: " + form.expdate.value);
         form.expdate.focus();
         return false;
@@ -182,19 +201,16 @@ function checkDate(str) {
 }
 
 function checkNum(length) {
-    var zipEntry = document.info.zip.value;
+    var zipEntry = document.getElementsByName("zip").value;
     var zipNum = parseInt(zipEntry, 12);
-    if (document.info.zip.value.length == length){
-        if(zipNum != 0 && isNaN(zipNum) == false){
+    if (zipEntry.length === length) {
+        if(zipNum !== 0 && isNaN(zipNum) === false)
             return true;
-        }
-        else {
+        else
             return false;
-        }
     }
-    else {
+    else
         return false;
-    }
 }
 
 function checkMail(str) {
@@ -202,8 +218,8 @@ function checkMail(str) {
     return regexp.test(str);
 }
 
-function stringlength(inputtxt, minlength, maxlength) {
-    var field = inputtxt.value;
+function stringlength(inputTxt, minlength, maxlength) {
+    var field = inputTxt;
     var mnlen = minlength;
     var mxlen = maxlength;
 
@@ -224,5 +240,31 @@ function SubmitForm() {
 function checkForm(form1) {
     if(!checkDate(form.expdate))
         return false;
+}
+
+// AJAX code
+function showStates() {
+    if(window.XMLHttpRequest)
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    else
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+    xmlhttp.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+            var obj = eval(this.responseText);
+            var x = document.getElementById("stateDD");
+
+            for(i = 0; i < obj.length; i++) {
+                var option = document.createElement("option");
+                option.value = obj[i].stateCode;
+                option.text = obj[i].stateName;
+                x.add(option, x[i]);
+            }
+        }
+    };
+    xmlhttp.open("GET", "getStates.php", true);
+    xmlhttp.send();
 }
 

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b54ef3e7-5531-475b-9f22-aa00c2cbac75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/shippinginfo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userinfo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmationpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/confirmationpage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ourJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/ourJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shippingInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/shippingInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingCart.html" afterDir="false" />
@@ -12,6 +17,25 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -25,7 +49,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SNgoa7BMrn3dO78qK7YICrJKF5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -67,7 +95,11 @@
       <workItem from="1571452483610" duration="326000" />
       <workItem from="1571452832547" duration="2772000" />
       <workItem from="1571455846447" duration="1162000" />
-      <workItem from="1572652238477" duration="5699000" />
+      <workItem from="1572652238477" duration="6112000" />
+      <workItem from="1573442863542" duration="1870000" />
+      <workItem from="1573488210324" duration="8485000" />
+      <workItem from="1573517438999" duration="5125000" />
+      <workItem from="1573578072017" duration="14147000" />
     </task>
     <servers />
   </component>
@@ -86,5 +118,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
