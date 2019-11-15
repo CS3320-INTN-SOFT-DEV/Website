@@ -12,7 +12,7 @@
 
     <title>Shipping Information</title>
 </head>
-<body>
+<body class="bg-light container" onload="showStates()">
     <header>
         <h1>COMPANY NAME</h1>
     </header>
@@ -21,23 +21,23 @@
         <li><a class="active" href="#log">Login</a></li>
         <li><a href="UserInfo.html">User Info</a></li>
         <li><a href="shoppingCart.html">Shopping Cart</a></li>
-        <li><a href="shippingInfo.html">Shipping Info</a></li>
+        <li><a href="shippingInfo.html">Shipping</a></li>
         <li><a href="checkout.html">Checkout</a></li>
     </ul>
 
     <div class="container">
         <h4>Shipping Information</h4>
-        <form action="/action_page.php">
+        <form action="shippinginfo.php" method="post">
             <input type="checkbox"> Use Physical Address<br><br>
             Address 1<br>
-            <input type="text" id="address1"><br><br>
+            <input type="text" name="address1" required="required" title='Please Enter Address 1'><br><br>
             Address 2<br>
-            <input type="text" id="address2"><br><br>
+            <input type="text" name="address2"><br><br>
             City<br>
-            <input type="text" id="city"><br><br>
+            <input type="text" name="city" required="required" title='Please Enter City'><br><br>
             State<br>
-            <select class="dropdown" id="states">
-                <option value="None">-- Select --</option>
+            <select class="dropdown" id="stateDD" name="state" required="required" title='Please Select State'>
+                <option value="" selected="selected">-- Select a State --</option>
                 <option value="Alabama">AL</option>
                 <option value="Alaska">AK</option>
                 <option value="Arizona">AZ</option>
@@ -89,15 +89,18 @@
                 <option value="Wisconsin">WI</option>
                 <option value="Wyoming">WY</option>
             </select><br><br>
+
             Zip Code<br>
-            <input type="text" id="zipcode"><br><br>
-            <input type="button" name="gotoCheckoutBtn" value="Continue to Checkout"
+            <input type="text" name="zipcode" pattern="(\d{5}([\-]\d{4})?)"
+                   required="required" title='5 or 9 digit zip code'><br><br>
+
+            <input type="submit" name="gotoCheckoutBtn" value="Continue to Checkout"
                    class="btn" onclick="gotoCheckout()"><br><br>
         </form>
     </div>
 
-    <footer>
-        <p>© Copyright 2019 Company Name</p>
+    <footer class="my-5 text-muted text-center text-smaller">
+        <p class="mb-1">© Copyright 2019 - Company Name</p>
     </footer>
 
 </body>

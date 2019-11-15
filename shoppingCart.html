@@ -11,7 +11,7 @@
 
     <title>Shopping Cart</title>
 </head>
-<body>
+<body class="bg-light container">
     <header>
         <h1>COMPANY NAME</h1>
     </header>
@@ -20,14 +20,14 @@
         <li><a class="active" href="#log">Login</a></li>
         <li><a href="UserInfo.html">User Info</a></li>
         <li><a href="shoppingCart.html">Shopping Cart</a></li>
-        <li><a href="shippingInfo.html">Shipping Info</a></li>
+        <li><a href="shippingInfo.html">Shipping</a></li>
         <li><a href="checkout.html">Checkout</a></li>
     </ul>
 
     <div class="container">
         <h4>Shopping Cart</h4>
         Product<br>
-        <select class="dropdown" name="products" multiple>
+        <select multiple class="dropdown" name="products" required="required" title='Please Select a Product'>
             <option id="p1" value="5">Product 1 ($5)</option>
             <option id="p2" value="10">Product 2 ($10)</option>
             <option id="p3" value="15">Product 3 ($15)</option>
@@ -42,8 +42,8 @@
         <div class="row">
             <div class="col-50">
 
-                Units <br>
-                <input type="text" id="units"><br><br>
+                Unit(s)<br>
+                <input type="text" name="units" required="required" title='Please Enter Units'><br><br>
             </div>
         </div>
 
@@ -62,8 +62,8 @@
                class="btn" onclick="gotoShipping()"><br><br>
     </div>
 
-    <footer>
-        <p>© Copyright 2019 Company Name</p>
+    <footer class="my-5 text-muted text-center text-smaller">
+        <p class="mb-1">© Copyright 2019 - Company Name</p>
     </footer>
 
     <script type="text/javascript" src="ourJS.js"></script>

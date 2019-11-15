@@ -1,3 +1,5 @@
+@charset "ISO-8859-1";
+
 body{
     background-color:white;
 }
@@ -55,7 +57,6 @@ h4{
 font-weight:bolder !important;
 }
 
-@charset "ISO-8859-1";
 * {
     box-sizing: border-box;
 }
@@ -90,7 +91,7 @@ li a:hover {
 }
 
 article {
-    float: center;
+    /*float: center;*/
     padding: 20px;
     width: 100%;
     background-color: white;
@@ -116,8 +117,15 @@ input[type=text] {
     font-family: sans-serif;
 }
 
+input[type=email] {
+    display: inline-block;
+    color: #777777;
+    font-family: sans-serif;
+}
+
 input[type=submit] {
-    width: 100%;
+    width: 25%;
+    font-size: large;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid #ccc;
