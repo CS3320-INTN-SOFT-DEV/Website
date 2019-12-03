@@ -19,6 +19,8 @@ $sql = "INSERT INTO `PaymentInformation` (`cardType`, `cardNumber`, `expDate`)
 if(!mysqli_query($conn, $sql))
     die('Error: ' . mysqli_error($conn));
 
+header("location: http://localhost:8080/Website/confirmationpage.html");
+
 mysqli_close($conn);
 
 ?>

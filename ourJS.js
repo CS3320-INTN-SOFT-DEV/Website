@@ -16,10 +16,8 @@ function displayProducts() {
 function calcPrice() {
     var priceOfProduct = 0;
     var unitPrice = 0;
-    var numUnits = 0;
     var totalPrice = 0;
-
-    numUnits = document.getElementsByName("units").value;
+    var numUnits = document.getElementsByName("units").value;
 
     var productsNotSelected = 0;
     for(var i = 0; i < products.length; i++) {
@@ -71,6 +69,69 @@ function checkoutPrice() {
     document.getElementById("totalAmt").innerHTML = "$" + fixedGrandTotal;
 }
 
+function gotoShipping() {
+    var productsNotSelected = 0;
+    for(var i = 0; i < products.length; i++)
+        if(products[i].selected !== true)
+            productsNotSelected++;
+
+    if(productsNotSelected === 4) {
+        alert("Please select at least one product.");
+        return false;
+    }
+
+    var units = document.getElementById("units").value;
+
+    if(units === "") {
+        alert("Please enter a number of units.");
+        return false;
+    }
+    else
+        location.href = "shippingInfo.html";
+}
+
+function gotoCart() {
+    var fullname = document.getElementsByName("fname").value;
+    var address1 = document.getElementsByName("street").value;
+    var address2 = document.getElementsByName("street2").value;
+    var city = document.getElementsByName("city").value;
+    var stateList = document.getElementsByName("state");
+    var states = stateList.options[stateList.selectedIndex].value;
+    var zip = document.getElementsByName("zip").value;
+    var phone = document.getElementsByName("phone").value;
+    var email = document.getElementsByName("email").value;
+
+    if(fullname === "") {
+        alert("Please enter a name.");
+        return false;
+    }
+    else if(address1 === "") {
+        alert("Please enter an address.");
+        return false;
+    }
+    else if(city === "") {
+        alert("Please enter a city.");
+        return false;
+    }
+    else if(states === "") {
+        alert("Please enter a state.");
+        return false;
+    }
+    else if(zip === "") {
+        alert("Please enter a zip code.");
+        return false;
+    }
+    else if(phone === "") {
+        alert("Please enter a phone number.");
+        return false;
+    }
+    else if(email === "") {
+        alert("Please enter an email address.");
+    }
+    else
+        location.href = "shoppingCart.html";
+}
+
 function gotoCheckout() {
     var address = document.getElementsByName("address1").value;
     var city = document.getElementsByName("city").value;
@@ -91,32 +152,11 @@ function gotoCheckout() {
         return false;
     }
     else if(zip === "") {
-        alert("Please enter a zip code");
+        alert("Please enter a zip code.");
         return false;
     }
     else
         location.href = "checkout.html";
-}
-
-function gotoShipping() {
-    var productsNotSelected = 0;
-    for(var i = 0; i < products.length; i++)
-        if(products[i].selected !== true)
-            productsNotSelected++;
-
-    if(productsNotSelected === 4) {
-        alert("Please select at least one product.");
-        return false;
-    }
-
-    var units = document.getElementById("units").value;
-
-    if(units === "") {
-        alert("Please enter a number of units.");
-        return false;
-    }
-    else
-        location.href = "shippingInfo.html";
 }
 
 function gotoConfirmationPage() {
