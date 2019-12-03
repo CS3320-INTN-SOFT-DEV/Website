@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b54ef3e7-5531-475b-9f22-aa00c2cbac75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/._UserInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/._shippingInfo.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/shippinginfo.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/userinfo.php" afterDir="false" />
@@ -103,6 +105,7 @@
       <workItem from="1573517438999" duration="5125000" />
       <workItem from="1573578072017" duration="20777000" />
       <workItem from="1575388266349" duration="9186000" />
+      <workItem from="1573578072017" duration="20107000" />
     </task>
     <servers />
   </component>
