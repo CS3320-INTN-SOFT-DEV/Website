@@ -95,6 +95,8 @@ if(!mysqli_query($conn, $sql))
           FROM UserInformation WHERE userId = ?";
 $result = mysqli_query($conn, $sql);*/
 
+header("location: http://localhost:8080/Website/shoppingCart.html");
+
 mysqli_close($conn);
 
 ?>
