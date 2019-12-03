@@ -12,18 +12,18 @@
     <Title>Checkout</Title>
 </head>
 <body class="bg-light container" onload="checkoutPrice()">
-    <div class="row">
-        <div class="col pt-3 pb-2">
-            <p class="brandname">Company Name</p>
-        </div>
-    </div>
-    <div>
-        <ul>
-            <li><a class="active" href="#log">Login</a></li>
-  		    <li><a href="UserInfo.html">User Info</a></li>
-  		    <li><a href="shippingInfo.html">Shipping</a></li>
-        </ul>
-    </div>
+    <header>
+        <h1>NIDIDAS</h1>
+    </header>
+
+    <ul>
+        <li><a class="active" href="#log">Login</a></li>
+        <li><a href="UserInfo.html">User Info</a></li>
+        <li><a href="shoppingCart.html">Shopping Cart</a></li>
+        <li><a href="shippingInfo.html">Shipping</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+
 <div class="row pt-5">
     <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items center pt-1 pb-1 pl-2">
@@ -66,25 +66,31 @@
 </div>
     <div class="col-md-8 order-md-1 pb-4">
         <h4 class="d-flex justify-content-between align-items center pt-1 pb-1 pl-2">Payment</h4>
-        <form class="font border bg-white" action="#">
-        Choose your payment method<br>
-            <select class="font form-control">
+        <form action="checkout.php" method="post" class="font border bg-white">
+
+            Choose your payment method<br>
+            <select class="dropdown" name="cardtype" required="required" title='Please Select Payment'>
+                <option value="">-- Select Payment Method --</option>
                 <option value="Visa">Visa</option>
                 <option value="Mastercard">Mastercard</option>
                 <option value="American Express">American Express</option>
-            </select><br>
+            </select><br><br>
+
             Card Number <br>
-            <input class="font form-control"type="text" name="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX"><br>
+            <input type="text" name="cardnumber" required="required" title='Please Enter Card Number'><br><br>
+
             Expiration Date <br>
-            <input class="font form-control" type="text" name="expdate" placeholder="XXX"><br>
-            <input class="font" type="checkbox"> I agree and authorize the amount to be charged to my credit card.
-        <br><br><a href="confirmationpage.html"><button class="font btn btn-warning btn-block" type="Button"
-                                                        value="Submit" onclick="SubmitForm()">Submit</button></a>
+            <input type="text" name="expdate" required="required" title='Please Enter Expiration Date'><br><br>
+
+            <input type="checkbox"> I agree and authorize the amount to be charged to my credit card.<br><br>
+
+            <input type="submit" value="Submit" class="btn" onclick="gotoConfirmationPage()">
+
         </form>
     </div>
     </div>
     <footer class="my-5 text-muted text-center text-smaller">
-        <p class="mb-1">© Copyright 2019 Company Name</p>
+        <p class="mb-1">© 2019 Nididas</p>
     </footer>
 
 </body>
