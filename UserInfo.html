@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type="text/javascript" src="ourJS.js"></script>
     <script type="text/javascript" src="/scripts/gen_validatorv2.js"></script>
 
     <title>User Info</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<div class="nameadd_info">
+
+<body class="bg-light container" onload="showStates()">
     <header>
-        <h1>COMPANY NAME</h1>
+        <img src="nidilogo.png">
+        <h1>NIDIDAS</h1>
     </header>
 
-
     <ul>
-        <li><a class="active" href="#log">Login</a></li>
+        <li><a class="active" href="login.html">Login</a></li>
         <li><a href="UserInfo.html">User Info</a></li>
         <li><a href="shoppingCart.html">Shopping Cart</a></li>
         <li><a href="shippingInfo.html">Shipping</a></li>
@@ -30,24 +30,22 @@
 
     <section>
         <article>
-            <form action="/action_page.php">
+            <form action="userinfo.php" method="post">
                 Full Name:<br>
-                <input type="text" name="fname" ><br>
+                <input type="text" name="fname" required="required" title='Please Enter Full Name'><br>
 
                 Address 1:<br>
-                <input type="text" name="street" ><br>
+                <input type="text" name="street" required="required" title='Please Enter Address 1'><br>
 
                 Address 2:<br>
                 <input type="text" name="street2" ><br>
 
                 City:<br>
-                <input type="text" name="city" ><br>
+                <input type="text" name="city" required="required" title='Please Enter City'><br>
 
-                <p></p>
-                <p class = "statetitle">State:<p>
-
-                <select name="state" id="state">
-                    <option value="" selected="selected">Select a State</option>
+                State:<br>
+                <select type="text" id="stateDD" name="state" required="required" title='Please Select State'>
+                    <option value="" selected="selected">-- Select a State --</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -101,32 +99,26 @@
                     <option value="WY">Wyoming</option>
                 </select>
 
-
-
                 <br><br>
                 Zip Code:<br>
-                <input type="text" name="zip" ><br>
+                <input type="text" name="zip" pattern="(\d{5}([\-]\d{4})?)"
+                       required="required" title='5 or 9 digit zip code'><br>
 
                 Phone:<br>
-                <input type="text" name="phone" ><br>
+                <input type="text" name="phone" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
+                       required="required" title='10 digit phone number'><br>
 
                 Email:<br>
-                <input type="text" name="email" ><br>
-                <br><br>
-                <input type="button" value="Submit" onclick="validatePersonalInfo()">
+                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                       required="required" title='Match the format: *@example.com'><br><br>
 
+                <input type="submit" value="Next" name="userBtn" class="btn" title='Click here to submit.' onclick="gotoCart()">
             </form>
-
         </article>
     </section>
 
-
     <footer class="my-5 text-muted text-center text-smaller">
-        <p class="mb-1">© Copyright 2019 - Company Name</p>
+        <p class="mb-1">© 2019 Nididas</p>
     </footer>
-
-
-</div>
-
 </body>
 </html>

@@ -1,18 +1,127 @@
-body{
+@charset "ISO-8859-1";
+
+* {
+    box-sizing: border-box;
+}
+
+article {
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    height: 600px; /* only for demonstration, should be removed */
+}
+
+.bg-black{
+    color:black;
+    background-color: rgb(28, 28, 28);
+}
+
+body {
     background-color:white;
 }
 
-h1{
+.border {
+    border: 2px solid #cccccc;
+    padding: 10px;
+}
+
+.brandname {
+    font-family:'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
+}
+
+.btn {
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    background-color:black;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.btn-block {
+    font-weight:bolder !important;
+}
+
+.btn:hover {
+    background-color: #ffd500;
+}
+
+.centertext {
+     text-align: center;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+    padding: 0 16px;
+}
+
+.cart-container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 5px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    position: relative;
+    width: 550px;
+}
+
+.shopping-cart {
+    background-color: #f2f2f2;
+    padding: 5px 20px 5px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    position: absolute;
+    top: 260px;
+    right: 102px;
+    width: 500px;
+    /*height: 356px;*/
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.font, p, input, h6 {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+footer {
+    text-align: center;
+    font-size: smaller;
+}
+
+h1 {
     font-family:'Archivo Black', sans-serif;
     font-size: 40px;
     color: #ffc107;
     text-align: center;
     text-transform: uppercase;
     padding-top: 15px;
-    padding-bottom: 10px;
 }
-p,.font, input, h6 {
-    font-family: 'Nanum Gothic', sans-serif;
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color:white;
+    background-color:black;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
 }
 
 header {
@@ -23,41 +132,81 @@ header {
     font-family: 'Archivo Black', sans-serif;
 }
 
-.brandname {
-    font-family:'Archivo Black', sans-serif;
-    text-transform: uppercase; 
-    font-size: 40px;
-    text-align: center;
+input[type=email] {
+    display: inline-block;
+    color: #777777;
+    font-family: sans-serif;
+    margin: 2px;
+    padding-left: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-h2{
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-}
-h4{
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
+input[type=submit] {
+    font-size: large;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     color:white;
     background-color:black;
-    align-items: center;
-    justify-content: center;
-    padding-left: 10px;
-}
-.border {
-    border: 2px solid #cccccc;
-    padding: 10px;
 }
 
-.centertext {
+input[type=text] {
+    display: inline-block;
+    color: #777777;
+    font-family: sans-serif;
+    margin: 2px;
+    padding-left: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
     text-align: center;
-}
-.btn-block {
-font-weight:bolder !important;
+    padding: 14px 16px;
 }
 
-@charset "ISO-8859-1";
-* {
-    box-sizing: border-box;
+li a:hover {
+    background-color: #ffd500;
+}
+
+.login {
+    height: 520px;
+    width: 500px;
+    margin: auto;
+    padding-top: 90px;
+    border-radius: 8px;
+}
+
+.logo {
+    height:80px;
+    width:80px;
+    box-shadow: 10px 10px 20px #e3dede;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+span.price {
+    float: right;
+    color: grey;
 }
 
 .statetitle {
@@ -71,104 +220,4 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #ffd500;
-}
-
-article {
-    float: center;
-    padding: 20px;
-    width: 100%;
-    background-color: white;
-    height: 600px; /* only for demonstration, should be removed */
-}
-
-section:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-input[type=text] {
-    /*width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-     */
-    display: inline-block;
-    color: #777777;
-    font-family: sans-serif;
-}
-
-input[type=submit] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    color:white;
-    background-color:black;
-}
-
-.container {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-}
-
-.row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-}
-
-.col-50 {
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%;
-    padding: 0 16px;
-}
-
-.btn {
-    font-family: 'Oswald', sans-serif;
-    color:white;
-    background-color:black;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 30px;
-
-}
-
-.btn:hover {
-    background-color: #ffd500;
-}
-
-span.price {
-    float: right;
-    color: grey;
-}
-
-footer{
-    text-align: center;
-    font-size: smaller;
 }
