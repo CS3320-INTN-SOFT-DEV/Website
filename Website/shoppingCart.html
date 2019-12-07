@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Shopping Cart</title>
+</head>
+
+<body class="bg-light container">
+    <header>
+        <img src="nidilogo.png">
+        <h1>NIDIDAS</h1>
+    </header>
+
+    <ul>
+        <li><a class="active" href="login.html">Login</a></li>
+        <li><a href="UserInfo.html">User Info</a></li>
+        <li><a href="shoppingCart.html">Shopping Cart</a></li>
+        <li><a href="shippingInfo.html">Shipping</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+
+    <div class="cart-container">
+        <h4>Select a Product:</h4>
+        <select class="dropdown" name="products" required="required" title='Please Select a Product'>
+            <option id="" selected="selected">-- Select a Product --</option>
+            <option id="p1" value="5">Product 1 ($5)</option>
+            <option id="p2" value="10">Product 2 ($10)</option>
+            <option id="p3" value="15">Product 3 ($15)</option>
+            <option id="p4" value="20">Product 4 ($20)</option>
+        </select><br><br>
+
+        Unit(s)<br>
+        <input type="text" name="units" required="required" title='Please Enter Units'><br><br>
+
+        <input type="submit" name="addProds" value="Add Product(s)"
+               class="btn" title='Click here to add product(s).' onclick="calcPrice()"><br>
+
+        <input type="submit" name="gotoShippingBtn" value="Continue to Shipping"
+               class="btn" onclick="gotoShipping()"><br><br>
+    </div>
+
+    <div class="shopping-cart">
+        <h4>Shopping Cart</h4>
+        <div class="description">
+            <span>Your cart is empty.</span><br>
+        </div>
+        <span class="price" style="color: black">
+            <hr>
+            <p id="total_price">Total Price: $</p>
+            <br><br>
+        </span>
+    </div>
+
+    <footer class="my-5 text-muted text-center text-smaller">
+        <p class="mb-1">© 2019 Nididas</p>
+    </footer>
+
+    <script type="text/javascript" src="ourJS.js"></script>
+</body>
+</html>

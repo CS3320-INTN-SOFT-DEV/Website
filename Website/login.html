@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="ourJS.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body class="bg-dark text-center">
+    <div class="login mt-5">
+        <form action="login.php" method="post">
+            <img class="mb-4" src="nidilogo.png" style="margin-top: 10px">
+            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email address"
+                   required="required" title='Match the format: *@example.com' autofocus="autofocus"><br>
+            <input type="text" name="password" placeholder="Password" required="required"><br>
+            <input type="submit" value="Sign In" name="sign-in" class="btn" title='Click here to login' onclick="gotoUI()">
+        </form>
+    </div>
+
+    <footer class="my-5 text-muted text-center text-smaller">
+        <p class="mb-1">© 2019 Nididas</p>
+    </footer>
+</body>
+</html>
